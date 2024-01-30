@@ -1,0 +1,12 @@
+__pycache__
+venv
+.vscode
+.DS_Store
+.env
+.installed
+*.bak
+*.tmp
+*.log
+*test*
+*.backup
+/SUBMISSION_ARCHIVE/

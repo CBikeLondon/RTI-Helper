@@ -1,0 +1,35 @@
+download_dir: ~/Downloads # Folder you will download the confirmation PDF using your web browser
+submission_dir: ./SUBMISSION_ARCHIVE # Folder to archive the incident in the end
+
+# Police forces typically want 60 seconds before and after the incident. You can adjust this below if required.
+start_offset_seconds: 30
+end_offset_seconds: 30
+
+# This generates an audio clip with a customizable duration before and after the timestamp.
+# The user should ideally speak clearly after the incident, verbally logging the registration number and the time.
+# This is not for submission but for AI speech to text inference to gather the registration number and the time of the incident.
+start_audio_offset_seconds: 5
+end_audio_offset_seconds: 15
+
+# AI MODEL TO USE FROM OPENAI
+openai_model: gpt-4-0125-preview
+audio_model: whisper-1
+
+max_attempts: 2 # How many times to attempt LLM inference
+initial_temperature: 0 # Deterministic
+increased_temperature: 0.6 # Increasing inference temperature to be less deterministic
+
+frame_capture_count: 3 # How many still images do you want generated from the video around the incident timestamp?
+frame_capture_interval: 0.3 # How many seconds between each still image.
+#Example: if you set frame_capture_count to 3 and frame_capture_interval to 0.3, you will get 3 still images: One at incident incident timestamp, one 0.3s before and one 0.3s after.
+
+# Trimmed video dimensions in pixels
+# Note will not upscale if source is smaller than what is set below
+short_edge_resolution: 1080
+
+trim_only: false # Set to true to only trim the video and not do any encoding
+
+# Set to false to skip PDF confirmation step, otherwise will assume it's the latest PDF in download_dir
+confirm_pdf_selection: false
+
+use_APIs: true # Set this to false to disable making API calls to OpenAI or to DVLA
