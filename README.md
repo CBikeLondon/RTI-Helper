@@ -44,7 +44,7 @@ Follow these steps to install the utility:
      ```
    - **Windows (not yet implemented) **:
      ```bash
-     ./run b
+     ./run.bat
      ```
 
 
