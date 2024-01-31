@@ -41,8 +41,8 @@ def valid_time(s):
         try:
             # If the datetime object is successfully created, the format is correct
             parsed_time = datetime.strptime(s, time_format)
-            # Convert the time to seconds
-            seconds = parsed_time.hour * 3600 + parsed_time.minute * 60 + parsed_time.second
+            # Convert the time to seconds using total_seconds() method
+            seconds = int((parsed_time - datetime(1900, 1, 1)).total_seconds())
             return seconds  # Return the number of seconds
         except ValueError:
             continue  # Try the next format
