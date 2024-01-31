@@ -1,4 +1,4 @@
-download_dir: ./testing/Downloads # Folder you will download the confirmation PDF using your web browser
+download_dir: ~/Downloads # Folder you will download the confirmation PDF using your web browser
 submission_dir: ./SUBMISSION_ARCHIVE # Folder to archive the incident in the end
 
 # Police forces typically want 60 seconds before and after the incident. You can adjust this below if required.
