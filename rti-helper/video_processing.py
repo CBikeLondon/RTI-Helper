@@ -304,7 +304,7 @@ class VideoProcessor:
         Raises:
             VideoProcessingError: Raised if there's an issue during the video processing phase.
         """
-        logging.info(f"Starting video processing for file: {video_path} with incident time @ {self.format_seconds_to_hhmmss(timestamp)}")
+        logging.info(f"Starting video processing for file: {video_path} with incident timestamp @ {self.format_seconds_to_hhmmss(timestamp)}")
         video_duration, frame_rate = self.get_video_info(video_path)  # Assuming get_video_info returns a tuple (duration, frame_rate)
         if not self.is_timestamp_valid(timestamp, video_duration):
             raise VideoProcessingError(f"Invalid timestamp: {self.format_seconds_to_hhmmss(timestamp)} for video duration: {self.format_seconds_to_hhmmss(video_duration)}")
